@@ -1,23 +1,20 @@
 
-#ifndef DEVICE_FURNACE_H
-#define DEVICE_FURNACE_H
+#ifndef DEVICE_BELT_DRIVE_H
+#define DEVICE_BELT_DRIVE_H
 
 #include "world.h"
 #include "device.h"
 #include "recipe_furnace.h"
+#include "circuits.h"
 
 #include <stdint.h>
 
-class DeviceFurnace: public Device {
+class DeviceBeltDrive: public Device {
 public:
 
-	uint16_t mat_cable, mat_rods;
-	t_furnace_content content;
-	int32_t internal_temperature;
-	uint8_t react;
-	uint8_t counter;
+	CircuitPowerSwitch* power_switch;
 
-	DeviceFurnace(t_world_coord coord, uint16_t cable, uint16_t rods);
+	DeviceBeltDrive(t_world_coord coord, uint16_t cable, uint16_t rods);
 
 	// from Block
 	uint16_t hardness();
